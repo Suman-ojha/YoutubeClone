@@ -1,0 +1,55 @@
+import React, { useContext } from "react";
+
+import { useNavigate } from "react-router-dom";
+import { categories } from "../utils/constants";
+import LeftNavMenuItem from "./LeftNavMenuItem";
+import { Context } from "../context/contextApi";
+const LeftNav = () => {
+  const { selectCategories, setSelectCategories, mobileMenu } =
+    useContext(Context);
+  const navigate = useNavigate();
+  const clickHandler = (name, type) => {
+    switch (type) {
+      case "category":
+        return setSelectCategories(name);
+      case "home":
+        return setSelectCategories(name);
+      case "menu":
+        return false;
+      default:
+        break;
+    }
+  };
+  return (
+    <div className="md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240] md:translate-x-0 transition-all">
+      <div className="flex flex-col px-5">
+        {categories.map((item,idx) => {
+          return (
+            <React.Fragment key={idx}>
+              <LeftNavMenuItem
+                key={item.name}
+                text={item.type === "home" ? "Home" : item.name}
+                icon={item.icon}
+                action={() => {
+                  clickHandler(item.name, item.type);
+                  navigate("/");
+                }}
+                className={`${
+                  selectCategories === item.name ? "bg-white/[0.15]" : ""
+                }`}
+              />
+
+              {item.divider && <hr className="my-5 border-white/[0.3]" />}
+            </React.Fragment>
+          );
+        })}
+        <hr className="my-5 border-white/[0.3]" />
+        <div className="text-white/[0.4] text-[14px]">
+          Youtube Clone By :- Suman Ojha
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LeftNav;
