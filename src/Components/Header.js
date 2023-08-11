@@ -67,12 +67,15 @@ const Header = () => {
           </div>
           <input
             type="text"
-            className="bg-transparent outline-none text-white pr-5 pl-5 md:pl-0 w-44 md:group-focus-within:pl-0 md:w-64 lg:w-[500px] "
+            className="bg-transparent outline-none text-white pr-5 pl-5 md:pl-0 w-36 md:group-focus-within:pl-0 md:w-64 lg:w-[500px] "
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyUp={searchQueryHandler}
             value={searchQuery}
           />
-          <button className="w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.2]">
+          <button
+            className="w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.2]"
+            onClick={() => searchQueryHandler("searchButton")}
+          >
             <IoIosSearch className="text-white text-[#6px] md:text-xl" />
           </button>
         </div>
@@ -86,12 +89,12 @@ const Header = () => {
           <div className=" flex items-center justify-center rounded-full w-10 h-10 hover:bg-[#303030]/[0.6]">
             <FiBell className="text-white text-xl cursor-pointer" />
           </div>
-          <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
-            <img
-              src="https://xsgames.co/randomusers/avatar.php?g=male"
-              alt="avatar image"
-            />
-          </div>
+        </div>
+        <div className="flex h-7 w-7 md:h-8 md:w-8 overflow-hidden rounded-full md:ml-4">
+          <img
+            src="https://xsgames.co/randomusers/avatar.php?g=male"
+            alt="avatar image"
+          />
         </div>
       </div>
     </div>
