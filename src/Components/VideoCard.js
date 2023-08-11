@@ -6,7 +6,7 @@ import { BsFillCheckCircleFill } from "react-icons/bs";
 import VideoLength from "../shared/VideoLength";
 const VideoCard = ({ video }) => {
   return (
-    <Link className="" to={`/video/${video?.videoId}`}>
+    <Link  to={`/video/${video?.videoId}`}>
       <div className="flex flex-col mt-5">
         <div className="relative h-48 md:h-40 md:rounded-xl overflow-hidden">
           <img
@@ -14,7 +14,7 @@ const VideoCard = ({ video }) => {
             src={video?.thumbnails?.[0]?.url}
           />
 
-          {video.lengthSeconds && <VideoLength time={video.lengthSeconds} />}
+          {video?.lengthSeconds && <VideoLength time={video?.lengthSeconds} />}
         </div>
       </div>
 

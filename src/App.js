@@ -8,7 +8,7 @@ import VideoDetails from './Components/VideoDetails'
 const App = () => {
   return (
     <AppContext>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col h-[98%]">
         <Header/>
         <Routes>
             <Route exact path="/" element={<Feed/>}/>
