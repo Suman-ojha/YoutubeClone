@@ -26,6 +26,8 @@ const VideoDetails = () => {
       console.log(res); // Log the object as JSON
       setVideo(res);
       setLoading(false);
+    }).catch((err)=>{
+      console.log('An unexpected error occured ', err);
     });
   };
 
@@ -35,6 +37,8 @@ const VideoDetails = () => {
       console.log(res); // Log the object content
       setRelatedVideos(res);
       setLoading(false);
+    }).catch((err)=>{
+      console.log('An unexpected error occured ', err);
     });
   };
 

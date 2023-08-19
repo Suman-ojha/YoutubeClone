@@ -20,10 +20,15 @@ const LeftNav = () => {
         break;
     }
   };
+
   return (
-    <div className={` md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute  md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${mobileMenu ? "translate-x-0 " : ""}` }>
+    <div
+      className={`md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 transition-transform ${
+        mobileMenu ? "translate-x-0" : "translate-x-[-240px] md:translate-x-0"
+      }`}
+    >
       <div className="flex flex-col px-5 ">
-        {categories.map((item,idx) => {
+        {categories.map((item, idx) => {
           return (
             <React.Fragment key={idx}>
               <LeftNavMenuItem

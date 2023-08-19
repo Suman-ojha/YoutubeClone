@@ -22,6 +22,7 @@ const SearchResult = () => {
       setResult(res.contents);
       setLoading(false);
     } catch (error) {
+      console.log('an error occured ',error);
       return error;
     }
   };

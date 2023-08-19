@@ -15,15 +15,15 @@ export const AppContext = (props) => {
   const fetchSelectCategoryData = async (query) => {
     try {
       setLoading(true);
-      const {contents} = await fetchData(`search/?q=${query}`);
-      console.log(contents);
+      const { contents } = await fetchData(`search/?q=${query}`);
       setSearchResult(contents);
     } catch (error) {
-      console.error("An error occurred while fetching data:", error);
+      console.error("An error occurred while fetching data:", error.response);
     } finally {
       setLoading(false);
     }
   };
+  
   
 
   return (
